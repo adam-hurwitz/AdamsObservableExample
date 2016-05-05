@@ -44,14 +44,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-       /* filterListBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // do something
-                Log.v(LOG_TAG, "DO SOMETHING");
-            }
-        });*/
     }
 }
