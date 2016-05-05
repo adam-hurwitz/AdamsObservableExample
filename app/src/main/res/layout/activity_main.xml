@@ -10,17 +10,28 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ahurwitz.adamsobservableex.MainActivity">
 
+
     <TextView
         android:id="@+id/h1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/amazing_observable_example_here"/>
+        android:text="@string/h1"/>
 
-    <Button
+    <Switch
+        android:id="@+id/boolean_switch_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/h1"
         android:layout_centerHorizontal="true"
-        android:text="@string/pass_arraylist_into_observable"/>
+        android:text="@string/filter"
+        android:splitTrack="true"/>
+
+    <Button
+        android:id="@+id/filterListBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boolean_switch_btn"
+        android:layout_centerHorizontal="true"
+        android:text="@string/filter_arraylist"/>
 </RelativeLayout>
