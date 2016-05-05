@@ -24,14 +24,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/h1"
         android:layout_centerHorizontal="true"
-        android:text="@string/filter"
-        android:splitTrack="true"/>
+        android:text="@string/filter"/>
 
-    <Button
+    <!--<Button
         android:id="@+id/filterListBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/boolean_switch_btn"
         android:layout_centerHorizontal="true"
-        android:text="@string/filter_arraylist"/>
+        android:text="@string/filter_arraylist"/>-->
+
+    <TextView
+        android:id="@+id/output_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>
