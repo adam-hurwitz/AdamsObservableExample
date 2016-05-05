@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AdamsObservableEx</string>
+    <string name="amazing_observable_example_here">Amazing Observable Example Here</string>
+    <string name="pass_arraylist_into_observable">Pass ArrayList Into Observable</string>
+</resources>
