@@ -3,4 +3,9 @@
     <string name="h1">Filter ArrayList of Objects With True Attribute</string>
     <string name="filter_arraylist">Filter ArrayList Using Observable</string>
     <string name="filter">FILTER</string>
+    <string name="object_1_label">Object 1: </string>
+    <string name="object_2_label">Object 2: </string>
+    <string name="object_3_label">Object 3: </string>
+    <string name="object_4_label">Object 4: </string>
+    <string name="object_5_label">Object 5: </string>
 </resources>
