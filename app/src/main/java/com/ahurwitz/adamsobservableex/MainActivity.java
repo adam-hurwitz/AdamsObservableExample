@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                                             .toBlocking()
                                             .single()
                     );
-                    //TODO: attach tramsformed list to something
                     obj1View.setText(String.valueOf(obj1.getVal()));
                     obj2View.setText(String.valueOf(obj2.getVal()));
                     obj3View.setText(String.valueOf(obj3.getVal()));
