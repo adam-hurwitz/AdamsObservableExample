@@ -66,12 +66,17 @@ public class MainActivity extends AppCompatActivity {
                             .toBlocking()
                             .single();*/
                     Log.v(LOG_TAG, "Transform Observable: " +
-                            myObservable.map(filterList())
-                                    .toList()
-                                    .toBlocking()
-                                    .single()
-                            //TODO: attach tramsformed list to something
+                                    myObservable.map(filterList())
+                                            .toList()
+                                            .toBlocking()
+                                            .single()
                     );
+                    //TODO: attach tramsformed list to something
+                    obj1View.setText(String.valueOf(obj1.getVal()));
+                    obj2View.setText(String.valueOf(obj2.getVal()));
+                    obj3View.setText(String.valueOf(obj3.getVal()));
+                    obj4View.setText(String.valueOf(obj4.getVal()));
+                    obj5View.setText(String.valueOf(obj5.getVal()));
                 }
             }
         });

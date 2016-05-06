@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AdamsObservableEx</string>
-    <string name="h1">Filter ArrayList of Objects With True Attribute</string>
-    <string name="filter_arraylist">Filter ArrayList Using Observable</string>
+    <string name="h1">Transform ArrayList of Objects With True Attribute</string>
+    <string name="transform_arraylist">Filter ArrayList Using Observable</string>
     <string name="filter">FILTER</string>
     <string name="object_1_label">Object 1: </string>
     <string name="object_2_label">Object 2: </string>
