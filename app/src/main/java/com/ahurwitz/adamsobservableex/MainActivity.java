@@ -59,18 +59,30 @@ public class MainActivity extends AppCompatActivity {
         switchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Observable myObservable = Observable.from(objects);
                 if (switchBtn.isChecked()) {
-                    Observable myObservable = Observable.from(objects);
-                    /*myObservable.map(filterList())
+                    switchBtn.setChecked(true);
+                    // .from() goes through each item of iterable object like a List
+                    myObservable.map(transformList(true))
                             .toList()
                             .toBlocking()
-                            .single();*/
+                            .single();
                     Log.v(LOG_TAG, "Transform Observable: " +
-                                    myObservable.map(filterList())
-                                            .toList()
-                                            .toBlocking()
-                                            .single()
+                            myObservable.map(transformList(true))
+                                    .toList()
+                                    .toBlocking()
+                                    .single()
                     );
+                    obj1View.setText(String.valueOf(obj1.getVal()));
+                    obj2View.setText(String.valueOf(obj2.getVal()));
+                    obj3View.setText(String.valueOf(obj3.getVal()));
+                    obj4View.setText(String.valueOf(obj4.getVal()));
+                    obj5View.setText(String.valueOf(obj5.getVal()));
+                } else {
+                    myObservable.map(transformList(false))
+                            .toList()
+                            .toBlocking()
+                            .single();
                     obj1View.setText(String.valueOf(obj1.getVal()));
                     obj2View.setText(String.valueOf(obj2.getVal()));
                     obj3View.setText(String.valueOf(obj3.getVal()));
@@ -82,9 +94,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @NonNull
-    private Func1<Object, Object> filterList() {
+    private Func1<Object, Object> transformList(Boolean b) {
         return filteredObject -> {
-            filteredObject.setVal(true);
+            filteredObject.setVal(b);
             return filteredObject;
         };
     }
