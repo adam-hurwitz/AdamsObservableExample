@@ -1,6 +1,7 @@
 package com.ahurwitz.adamsobservableex;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,11 @@ import android.widget.Button;
 import android.widget.Switch;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
+import java.util.Observable;
+
+import rx.functions.Func1;
 
 public class MainActivity extends AppCompatActivity {
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
@@ -19,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Object obj3 = new Object(3, "obj3", true);
     Object obj4 = new Object(4, "obj4", false);
     Object obj5 = new Object(5, "obj5", true);
+    rx.Observable observable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         switchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               observable.map(filterList(objects));
                 if (switchBtn.isChecked()) {
                     Log.v(LOG_TAG, "Filter Observable");
                     //TODO: Create observable and pass in ArrayList of Objects in .map() filter,
@@ -45,4 +52,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @NonNull
+    private Func1<ArrayList<Object>, ArrayList<Object>> filterList(ArrayList<Object> objects) {
+        return filteredObjects -> {
+            filteredObjects = objects;
+            return Observable
+                    .map(filterList(filteredObjects))
+                    .toList()
+                    .toBlocking()
+                    .single();
+        };
+    }
+
 }
