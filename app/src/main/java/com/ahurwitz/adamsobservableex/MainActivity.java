@@ -49,13 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
         Switch switchBtn = (Switch) findViewById(R.id.boolean_switch_btn);
 
-        /*observable.filter(new Func1() {
-            @Override
-            public java.lang.Object call(java.lang.Object o) {
-                return null;
-            }
-        });*/
-
         switchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                             .toList()
                             .toBlocking()
                             .single();
+
                     Log.v(LOG_TAG, "Transform Observable: " +
                             myObservable.map(transformList(true))
                                     .toList()
@@ -103,12 +97,3 @@ public class MainActivity extends AppCompatActivity {
 
 }
 
-   /*public Action1<Object> getAction()
-    {
-        return new Action1<Object>() {
-            @Override
-            public void call(Object object) {
-
-            }
-        };
-    }*/
